@@ -5,6 +5,7 @@
       "Sintese\\JsonFlatten\\": "src/"
     }
   },
+  "license": "MIT",
   "require": {
     "justinrainbow/json-schema": "^5.2",
     "ext-json": "*"
