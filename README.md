@@ -1,5 +1,7 @@
 # Json Flatten / Unflatten
 
+[![Latest Stable Version](http://poser.pugx.org/sintese/jsonflatten/v)](https://packagist.org/packages/sintese/jsonflatten)
+
 Estudo de caso para Tabulação e Expansão de objetos construídos a partir de um  [json-schema](https://json-schema.org/).
 
 # Definição de Uso
