@@ -1,4 +1,4 @@
-# Json Flatten / Unflatten
+# Pancakes
 
 [![Latest Stable Version](http://poser.pugx.org/sintese/jsonflatten/v)](https://packagist.org/packages/sintese/jsonflatten)
 
