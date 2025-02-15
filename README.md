@@ -2,11 +2,11 @@
 
 [![Latest Stable Version](http://poser.pugx.org/sintese/jsonflatten/v)](https://packagist.org/packages/sintese/jsonflatten)
 
-Estudo de caso para Tabulação e Expansão de objetos construídos a partir de um  [json-schema](https://json-schema.org/).
+Case study for Tabulation and Expansion of objects built from a  [json-schema](https://json-schema.org/).
 
-# Definição de Uso
+# Usage
 
-Dado a definição de um objeto especificada por um [json-schema](https://json-schema.org/):
+Given the definition of an object specified by a [json-schema](https://json-schema.org/):
 
 ```php
 $schema = <<<JSON 
@@ -48,13 +48,13 @@ $schema = <<<JSON
 JSON
 ```
 
-Temos por objetivo realizar a tabulação de seu conteúdo visando simplificar a sua manipulação:
+Our goal is to tabulate its content to simplify manipulation:
 
 ```php
 echo (new SchemaFlatten())->flat(new SchemaObject($schema));
 ```
 
-A estrutura tabulada irá compor em um mesmo nível chave (caminho) e valor (definição):
+The tabulated structure will compose key (path) and value (definition) at the same level:
 
 ```json
 {
@@ -82,7 +82,7 @@ A estrutura tabulada irá compor em um mesmo nível chave (caminho) e valor (def
 }
 ```
 
-Tendo a estrutura tabulada em mãos podemos criar um objeto achatado simplificando seu armazenamento:
+Having the tabulated structure in hand, we can create a flattened object to simplify its storage:
 
 ```php
 $payload = <<<JSON
@@ -95,13 +95,13 @@ $payload = <<<JSON
 JSON;
 ```
 
-Essa mesma estrutura pode ser utilizada em um segundo momento para recompor o objeto original:
+This same structure can later be used to recompose the original object:
 
 ```php
 echo (new SchemaFlatten())->unflat($payload);
 ```
 
-Assumindo assim o formato especificado pelo json schema utilizado como base de tabulação:
+Thus assuming the format specified by the JSON schema used as the tabulation basis:
 
 ```json
 {
@@ -118,6 +118,6 @@ Assumindo assim o formato especificado pelo json schema utilizado como base de t
 }
 ```
 
-## Contribuições
+## Contributions
 
-Contribuições, correções e sugestões de melhoria são muito bem-vindas.
+Contributions, corrections, and improvement suggestions are very welcome.
