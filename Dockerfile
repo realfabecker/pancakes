@@ -17,4 +17,16 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /var/www/html 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN pecl install xdebug && docker-php-ext-enable xdebug
-RUN git config --global --add safe.directory /var/www/html/mac
+RUN git config --global --add safe.directory /var/www/html
+
+FROM php:8.4.4-zts-alpine3.21 as php84
+RUN apk add --update \
+    autoconf \
+    build-base \
+    linux-headers \
+    git \
+    openjdk17-jdk    
+RUN pecl install xdebug
+RUN docker-php-ext-enable xdebug
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN git config --global --add safe.directory /var/www/html

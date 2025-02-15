@@ -1,5 +1,5 @@
 {
-  "name": "sintese/jsonflatten",
+  "name": "sintese/phancackes",
   "autoload": {
     "psr-4": {
       "Sintese\\Phancackes\\": "src/"

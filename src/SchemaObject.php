@@ -41,7 +41,7 @@ class SchemaObject implements JsonSerializable
      * @param array       $data
      * @param string|null $path
      */
-    public function __construct(array $data, string $path = null)
+    public function __construct(array $data, ?string $path = null)
     {
         $this->data = $data;
         $this->path = $path;
