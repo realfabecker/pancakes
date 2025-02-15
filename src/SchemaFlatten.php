@@ -1,6 +1,6 @@
 <?php
 
-namespace Sintese\JsonFlatten;
+namespace Sintese\Phancackes;
 
 use InvalidArgumentException;
 

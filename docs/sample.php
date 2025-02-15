@@ -1,9 +1,9 @@
 <?php
 
-use Sintese\JsonFlatten\SchemaFlatten;
-use Sintese\JsonFlatten\SchemaObject;
+use Sintese\Phancackes\SchemaFlatten;
+use Sintese\Phancackes\SchemaObject;
 
-require_once __DIR__ . "/../vendor/autoload.php";
+require_once __DIR__ . '/../vendor/autoload.php';
 
 /**
  * @return SchemaObject[]
@@ -24,7 +24,6 @@ function flat_random($schema)
 {
     $data = [];
     foreach (flat_defs($schema) as $key => $def) {
-
         if ($oneOf = $def->oneOf) {
             $oneOfSet = false;
             foreach ($oneOf as $oneOfv) {
@@ -70,10 +69,11 @@ function unflat($schema)
     return (new SchemaFlatten())->unflat(flat_random($schema));
 }
 
-function unflat_validate($schema)
-{
+function unflat_validate(
+    $schema
+) {
     $data = json_decode(json_encode(unflat($schema)), false);
-    $validator = new JsonSchema\Validator;
+    $validator = new JsonSchema\Validator();
     $validator->validate($data, (object)['$ref' => 'file://' . $schema]);
     if (!$validator->isValid()) {
         return $validator->getErrors();
@@ -83,7 +83,7 @@ function unflat_validate($schema)
 
 try {
 
-    $schema = __DIR__ . "/product-schema.json";
+    $schema = __DIR__ . '/product-schema.json';
     echo json_encode(flat_defs($schema));
     //echo json_encode(flat_random($schema));
     //echo json_encode(unflat($schema));

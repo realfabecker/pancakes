@@ -1,1 +1,4 @@
-x-php.ini
+*
+!docker-php.conf
+!php7.ini.sample
+!php8.ini.sample

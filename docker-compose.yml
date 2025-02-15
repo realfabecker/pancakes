@@ -4,18 +4,15 @@ services:
   backend:
     build:
       context: .
-      target: dev
+      target: php82
     tty: true
     ports:
       - "8000:8000"
     extra_hosts:
       - "host.docker.internal:${HOST_IP:-127.0.0.0}"
     volumes:
-      - ./:/app
-      - vendor:/app/vendor
-      - ./docker/x-php.ini:/usr/local/etc/php/conf.d/x-php.ini
-    working_dir: /app
-    entrypoint: php -S 0.0.0.0:8000 ./docs/sample.php
-
+      - ./:/var/www/html
+      - vendor:/var/www/html/vendor
+      - ./docker/x-php.ini:/usr/local/etc/php/conf.d/99-php.ini
 volumes:
   vendor:

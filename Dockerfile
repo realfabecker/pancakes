@@ -1,10 +1,20 @@
-FROM php:7.1-cli as base
-RUN apt-get update && apt-get install -y zip git
-COPY --from=composer:2.2 /usr/bin/composer /usr/bin/composer
+FROM php:7.1-apache AS php71
+RUN apt-get update && apt-get install -y \
+    libpq-dev \
+    git \
+    openjdk-17-jdk \
+    && docker-php-ext-install pdo pdo_pgsql
+WORKDIR /var/www/html
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN pecl install xdebug-2.9.6 && docker-php-ext-enable xdebug
 
-FROM base as dev
-RUN pecl install xdebug-2.9.6
-WORKDIR /app
-COPY composer.json .
-COPY composer.lock .
-RUN composer install
+FROM php:8.2-apache AS php82
+RUN apt-get update && apt-get install -y \
+    libpq-dev \
+    git \
+    openjdk-17-jdk \
+    && docker-php-ext-install pdo pdo_pgsql pdo_mysql
+WORKDIR /var/www/html 
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN pecl install xdebug && docker-php-ext-enable xdebug
+RUN git config --global --add safe.directory /var/www/html/mac

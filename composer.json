@@ -2,7 +2,7 @@
   "name": "sintese/jsonflatten",
   "autoload": {
     "psr-4": {
-      "Sintese\\JsonFlatten\\": "src/"
+      "Sintese\\Phancackes\\": "src/"
     }
   },
   "license": "MIT",
@@ -11,6 +11,11 @@
     "ext-json": "*"
   },
   "require-dev": {
-    "roave/security-advisories": "dev-latest"
+    "roave/security-advisories": "dev-latest",
+    "friendsofphp/php-cs-fixer": "^3.68"
+  },
+  "scripts": {
+    "debug:web": "php -dxdebug.mode=debug -dxdebug.start_with_request=yes -S 0.0.0.0:8000 ./docs/sample.php",
+    "debug:cli": "php -dxdebug.mode=debug -dxdebug.start_with_request=yes ./docs/sample.php"
   }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Sintese\JsonFlatten;
+namespace Sintese\Phancackes;
 
 use JsonSerializable;
 
@@ -36,7 +36,6 @@ class SchemaObject implements JsonSerializable
      * @var array
      */
     protected $data = [];
-
 
     /**
      * @param array       $data
@@ -183,7 +182,7 @@ class SchemaObject implements JsonSerializable
     /**
      * @return array
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
         return $this->data;
     }

@@ -1,0 +1,38 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+{
+    "name": "phancakes",
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "backend",
+    "forwardPorts": [
+      8000
+    ],
+    "workspaceFolder": "/var/www/html",
+    "customizations": {
+      "jetbrains": {
+        "plugins": [
+          "com.jetbrains.php",
+          "com.kalessil.phpStorm.phpInspectionsEA",
+          "com.intellij.php.tools.quality.phpstan"
+        ],
+        "settings": {
+          "org.jetbrains.plugins.go:app:GoFoldingSettings.isOneLineReturns": false,
+          "org.jetbrains.plugins.go:app:GoFoldingSettings.isOneLinePanics": false,
+          "org.jetbrains.plugins.go:app:GoFoldingSettings.isOneLineReturnFunctions": false,
+          "org.jetbrains.plugins.go:app:GoFoldingSettings.isOneLineErrorHandlingBlocks": false,
+          "org.jetbrains.plugins.go:app:GoFoldingSettings.isOneLineCaseClauses": false,
+          "com.intellij:app:EditorSettings.soft_wrap_file_masks": "*.md; *.txt; *.rst; *.adoc",
+          "com.intellij:app:HttpConfigurable.use_proxy_pac": true,
+          "com.intellij:app:VcsApplicationSettings.commit_from_local_changes": false
+        },
+        "backend": "IntelliJ"
+      },
+      "vscode": {
+        "extensions": [
+          "xdebug.php-debug",
+          "junstyle.php-cs-fixer",
+          "ms-azuretools.vscode-docker",
+          "bmewburn.vscode-intelephense-client"
+        ]
+      }
+    }
+  }
