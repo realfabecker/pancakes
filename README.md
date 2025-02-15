@@ -1,7 +1,7 @@
 # Phancakes
 
-[![Latest Stable Version](https://poser.pugx.org/sintese/jsonflatten/version.svg)](https://packagist.org/packages/sintese/jsonflatten)
-[![PHP Version Require](https://poser.pugx.org/sintese/jsonflatten/require/php)](https://packagist.org/packages/sintese/jsonflatten)
+[![Latest Stable Version](https://poser.pugx.org/sintese/phancackes/version.svg)](https://packagist.org/packages/sintese/phancackes)
+[![PHP Version Require](https://poser.pugx.org/sintese/phancackesn/require/php)](https://packagist.org/packages/sintese/phancackes)
 
 Case study for Tabulation and Expansion of objects built from a  [json-schema](https://json-schema.org/).
 
