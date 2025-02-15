@@ -7,8 +7,9 @@
   },
   "license": "MIT",
   "require": {
-    "justinrainbow/json-schema": "^5.2",
-    "ext-json": "*"
+    "php": "^7.4",
+    "ext-json": "*",
+    "justinrainbow/json-schema": "^5.2"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
