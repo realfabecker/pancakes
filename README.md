@@ -1,9 +1,9 @@
 # Phancakes
 
-[![Latest Stable Version](https://poser.pugx.org/sintese/phancackes/version.svg)](https://packagist.org/packages/sintese/phancackes)
-[![PHP Version Require](https://poser.pugx.org/sintese/phancackesn/require/php)](https://packagist.org/packages/sintese/phancackes)
-
 Case study for Tabulation and Expansion of objects built from a  [json-schema](https://json-schema.org/).
+
+[![Latest Stable Version](https://poser.pugx.org/sintese/phancackes/version.svg)](https://packagist.org/packages/sintese/phancackes)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=realfabecker_phancakes&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=realfabecker_phancakes)
 
 # Usage
 
