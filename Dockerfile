@@ -11,7 +11,9 @@ RUN pecl install xdebug-2.9.6 && docker-php-ext-enable xdebug
 FROM php:8.2-apache AS php82
 RUN apt-get update && apt-get install -y \
     git \
-    libpq-dev \    
+    libpq-dev \
+    nodejs \
+    npm \
     openjdk-17-jdk \
     && docker-php-ext-install pdo pdo_pgsql pdo_mysql
 WORKDIR /var/www/html 

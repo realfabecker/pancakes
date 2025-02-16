@@ -19,21 +19,18 @@ class SchemaFlatten
     {
         if ($schemaObject->isLeafNode()) {
             $items[$schemaObject->path] = $schemaObject;
-            return $items;
-        }
-        if ($schemaObject->isObject() && $schemaObject->getProperties()) {
+        } elseif ($schemaObject->isObject() && $schemaObject->getProperties()) {
             $children = [];
             foreach ($schemaObject->getProperties() as $property) {
                 $children = $this->flat($property, $children);
             }
-            return array_merge($items, $children);
-        }
-        if ($schemaObject->isArray() && $schemaObject->getItems() && $schemaObject->getItems()->getProperties()) {
+            $items = array_merge($items, $children);
+        } elseif ($schemaObject->isArray() && $schemaObject->getItems() && $schemaObject->getItems()->getProperties()) {
             $children = [];
             foreach ($schemaObject->getItems()->getProperties() as $property) {
                 $children = $this->flat($property, $children);
             }
-            return array_merge($items, $children);
+            $items = array_merge($items, $children);
         }
         return $items;
     }
