@@ -31,4 +31,8 @@ RUN apk add --no-cache --update \
     && pecl install xdebug \
     && docker-php-ext-enable xdebug \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
-    && git config --global --add safe.directory /var/www/html
+    && git config --global --add safe.directory /var/www/html \
+    && addgroup -g 1000 -S nonroot \
+    && adduser -u 1000 -s /bin/sh -S nonroot -D -G nonroot \
+    && chown -R nonroot:nonroot /var/www/html
+USER nonroot
