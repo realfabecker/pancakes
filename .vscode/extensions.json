@@ -3,6 +3,7 @@
         "xdebug.php-debug",
         "junstyle.php-cs-fixer",
         "ms-azuretools.vscode-docker",
-        "bmewburn.vscode-intelephense-client"
+        "bmewburn.vscode-intelephense-client",
+        "sonarsource.sonarlint-vscode"
     ]
 }

@@ -30,6 +30,7 @@
         "extensions": [
           "xdebug.php-debug",
           "junstyle.php-cs-fixer",
+          "sonarsource.sonarlint-vscode",
           "ms-azuretools.vscode-docker",
           "bmewburn.vscode-intelephense-client"
         ]
