@@ -1,5 +1,5 @@
 FROM php:7.1-apache AS php71
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install --no-install-recommends -y \
     git \
     libpq-dev \
     openjdk-17-jdk \        
@@ -9,7 +9,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN pecl install xdebug-2.9.6 && docker-php-ext-enable xdebug
 
 FROM php:8.2-apache AS php82
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install --no-install-recommends -y \
     git \
     libpq-dev \
     nodejs \
